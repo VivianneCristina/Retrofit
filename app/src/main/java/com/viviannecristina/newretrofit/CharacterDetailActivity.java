@@ -12,7 +12,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class CharacterDetailActivity extends AppCompatActivity {
 
     private CircleImageView imageDetail;
-    private TextView name, height, mass, hair, skin, eye, birth, gender;
+    private TextView nameDetail, heightDetail, massDetail, hairColor, skinColor, eyeColor, birthYear, genderType;
 
 
     @Override
@@ -21,14 +21,14 @@ public class CharacterDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_character_detail);
 
     imageDetail = findViewById(R.id.image_detail);
-    name = findViewById(R.id.name);
-    height = findViewById(R.id.height);
-    mass = findViewById(R.id.mass);
-    hair = findViewById(R.id.hair_color);
-    skin = findViewById(R.id.skin_color);
-    eye = findViewById(R.id.eye_color);
-    birth = findViewById(R.id.birth_year);
-    gender = findViewById(R.id.gender);
+    nameDetail = findViewById(R.id.name_detail);
+    heightDetail = findViewById(R.id.height_detail);
+    massDetail = findViewById(R.id.mass_detail);
+    hairColor = findViewById(R.id.hair_color);
+    skinColor = findViewById(R.id.skin_color);
+    eyeColor = findViewById(R.id.eye_color);
+    birthYear = findViewById(R.id.birth_year);
+    genderType = findViewById(R.id.gender_type);
 
     Bundle bundle = getIntent().getExtras();
 
@@ -36,15 +36,15 @@ public class CharacterDetailActivity extends AppCompatActivity {
         Character character = (Character) bundle.get("character");
 
         Picasso.get().load(Path.URL_BASE + character.getImg()).into(imageDetail);
-        name.setText(character.getName());
-        hair.setText(character.getHair());
-        skin.setText(character.getSkin());
-        eye.setText(character.getEye());
-        gender.setText(character.getGender());
+        nameDetail.setText(character.getName());
+        hairColor.setText(character.getHair());
+        skinColor.setText(character.getSkin());
+        eyeColor.setText(character.getEye());
+        genderType.setText(character.getGender());
 
-        height.setText(String.valueOf(character.getHeight()));
-        mass.setText(String.valueOf(character.getMass()));
-        birth.setText(String.valueOf(character.getBirth()));
+        heightDetail.setText(String.valueOf(character.getHeight()));
+        massDetail.setText(String.valueOf(character.getMass()));
+        birthYear.setText(String.valueOf(character.getBirth()));
 
         }
     }

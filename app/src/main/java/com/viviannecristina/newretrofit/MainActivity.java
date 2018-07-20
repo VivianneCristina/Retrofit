@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(@NonNull retrofit2.Call<List<Character>> call, @NonNull Response<List<Character>> response) {
 
-                setupRecycler(response.body());
             }
 
             @Override
